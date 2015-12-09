@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<h:head> 
+		<title>PromoShare</title>
+	</h:head>
+	
+	<h:body>
+		<p:layout fullPage="true">
+			<p:layoutUnit position="north" size="125">
+				<center><h1>#{usuarioManagedBean.message}</h1></center>
+				<center>A casa das melhores promoções</center>
+			</p:layoutUnit>
+			<p:layoutUnit position="west" size="190" collapsible="true">
+				<h:form>
+					<p:submenu/>
+					<p:commandButton value="Cadastrar Promocao" action="#{promocaoManagedBean.irCriarPromocao}"/>
+					<p:commandButton value="Ver suas Promoções" action="#{promocaoManagedBean.irVerPromo}"/>
+					<p:commandButton value="Promoções mais votadas" action="#{usuarioManagedBean.irLancamento}"/>
+				</h:form>
+			</p:layoutUnit>
+			<p:layoutUnit position="center">
+					<p:messages id="messages"/>
+					
+			</p:layoutUnit>
+			<!-- <p:outputLabel value="#{usuarioManagedBean.usuario.senha}"/> -->
+			<p:layoutUnit position="south">
+				<center><h5>PromoShare promoções para todos. </h5></center>
+			</p:layoutUnit>
+		</p:layout>
+	</h:body>
+</html>

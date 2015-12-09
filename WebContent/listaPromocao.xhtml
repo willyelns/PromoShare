@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<title>Lista de promoções</title>
+	</h:head>
+	
+	<h:body>
+	
+		<p:layoutUnit position="north" size="125">
+				<center><h1>#{usuarioManagedBean.message}</h1></center>
+				<center>A casa das melhores promoções</center>
+			</p:layoutUnit>
+		<center><h3>Lista de promoções</h3></center>
+		<p:dataTable var="promo" value="#{listaPromo.promos}">
+		    <p:column headerText="Nome">
+		        <h:outputText value="#{promo.nomeProduto}" />
+		    </p:column>
+		 
+		   <!--  <p:column headerText="Preco">
+		        <h:outputText value="#{promo.precoProduto}" />
+		    </p:column>  -->
+		    
+		 	<p:column headerText="Descrição">
+		        <h:outputText value="#{promo.descricao}" />
+		    </p:column>
+		</p:dataTable>
+		<p:button value="voltar" action="#{listaPromo.irLogado}"/>
+		<p:layoutUnit position="south">
+				<center><h5>PromoShare promoções para todos. </h5></center>
+			</p:layoutUnit>
+	</h:body>
+
+</html>
